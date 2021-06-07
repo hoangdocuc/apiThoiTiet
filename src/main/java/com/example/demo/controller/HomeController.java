@@ -43,7 +43,7 @@ public class HomeController {
 		RestTemplate restTemplate1 = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
-		HttpEntity<ThoiTiet> entity = new HttpEntity<ThoiTiet>(headers);
+		HttpEntity<DauVaoAPI> entity = new HttpEntity<DauVaoAPI>(headers);
 		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(url)
 				.queryParam("id", id)
 				.queryParam("appid", appid)
@@ -54,7 +54,7 @@ public class HomeController {
 	      responseThoiTiet.setName("Thành Phố " + thoiTiet.getName());
 	      responseThoiTiet.setDescription("Hiện tại đang "+ thoiTiet.getWeather().get(0).getDescription());
 	      responseThoiTiet.setSpeed("Tốc độ gió "+ thoiTiet.getWind().getSpeed()+" m/s");
-	      responseThoiTiet.setTemp("Nhiệt độ(Kelvin): "+ thoiTiet.getMain().getTemp());
+	      responseThoiTiet.setTemp("Nhiệt độ(Kelvin) "+ thoiTiet.getMain().getTemp());
 	      responseThoiTiet.setHumidity("Độ ẩm "+thoiTiet.getMain().getHumidity()+"%");
 	      return ResponseEntity.status(HttpStatus.OK).body(responseThoiTiet);
 	}

@@ -23,6 +23,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -35,8 +36,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Slf4j
 public class HomeController {
 	
-	@GetMapping("/api")
-	public ResponseEntity<ResponseThoiTiet> getAPI(@RequestParam("id") Integer id, @RequestParam("appid") String appid, @RequestParam("lang") String lang) {
+	@PostMapping("/api")
+	public ResponseEntity<ResponseThoiTiet> getAPI(@RequestParam("id") Integer id,
+												   @RequestParam("appid") String appid,
+												   @RequestParam("lang") String lang) {
 		String url = "http://api.openweathermap.org/data/2.5/weather";
 //		ThoiTiet object = restTemplate.getForObject(url, ThoiTiet.class);
 //		return object;

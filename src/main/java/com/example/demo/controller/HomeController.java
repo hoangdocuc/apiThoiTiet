@@ -36,7 +36,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Slf4j
 public class HomeController {
 	
-	@PostMapping("/api")
+	@GetMapping("/api")
 	public ResponseEntity<ResponseThoiTiet> getAPI(@RequestParam("id") Integer id,
 												   @RequestParam("appid") String appid,
 												   @RequestParam("lang") String lang) {

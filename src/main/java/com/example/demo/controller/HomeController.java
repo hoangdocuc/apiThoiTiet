@@ -62,4 +62,9 @@ public class HomeController {
 	      return ResponseEntity.status(HttpStatus.OK).body(responseThoiTiet);
 	}
 
+	@GetMapping("/test")
+	public ResponseEntity<String> getTest(){
+		return ResponseEntity.ok("hello");
+	}
+
 }
